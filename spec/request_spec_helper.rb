@@ -1,6 +1,10 @@
 require "spec_helper"
 
 module ApiHelper
+  def app
+    Rails.application
+  end
+
   def send_and_accept_json
     header "Accept", "application/json"
     header "Content-Type", "application/json"
@@ -22,7 +26,7 @@ RSpec.configure do |config|
   config.include ApiHelper
   config.include MetaHelper
 
-  config.before :type => :request do
+  config.before(:example, :type => :request) do
     send_and_accept_json
     stub_meta
   end

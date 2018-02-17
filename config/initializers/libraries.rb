@@ -4,6 +4,6 @@ require 'timeout'
 require 'resque/server'
 require 'resque/plugins/lock_timeout'
 require 'yajl/json_gem'
-require 'aws-sdk'
+require 'aws-sdk-elasticbeanstalk'
 require 'heaven'
 require "active_support/core_ext/hash/indifferent_access"

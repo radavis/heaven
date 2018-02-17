@@ -1,7 +1,8 @@
 ruby "2.3.1"
 source "https://rubygems.org"
 
-gem "rails",    "~>4.2.2"
+gem "rails", "~> 4.2.2"
+gem "redis", "~> 3.3.3"
 gem "resque"
 gem "resque-lock-timeout"
 gem "octokit"
@@ -13,8 +14,8 @@ gem "faraday"
 gem "faraday_middleware"
 
 # Providers
-gem "dpl",        "1.5.7"
-gem "aws-sdk"
+gem "dpl", "1.5.7"
+gem "aws-sdk-elasticbeanstalk"
 gem "capistrano", "2.9.0"
 
 # Notifiers
@@ -25,18 +26,21 @@ gem "flowdock"
 
 group :test do
   gem "sqlite3", "1.3.10"
-  gem "webmock"
+  gem "webmock", "~> 1.17.0"
   gem "simplecov", "0.7.1"
   gem "rubocop"
   gem "rspec-rails"
 end
 
 group :development do
-  gem "pry"
   gem "foreman"
   gem "meta_request"
   gem "better_errors"
   gem "binding_of_caller"
+end
+
+group :test, :development do
+  gem "pry"
 end
 
 group :staging, :production do

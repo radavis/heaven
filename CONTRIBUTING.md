@@ -1,3 +1,5 @@
+# Contributing
+
 If you'd like to submit changes:
 
 * Create a branch with your code

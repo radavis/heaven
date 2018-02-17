@@ -39,8 +39,8 @@ module Heaven
         log_stdout "Beanstalk: Creating application: #{app_name}\n"
         app_version = create_app_version(upload.key)
         log_stdout "Beanstalk: Updating application: #{app_name}-#{environment}.\n"
-        app_update  = update_app(app_version)
-        status.output =  "#{base_url}?region=#{custom_aws_region}#/environment"
+        app_update = update_app(app_version)
+        status.output = "#{base_url}?region=#{custom_aws_region}#/environment"
         status.output << "/dashboard?applicationName=#{app_name}&environmentId"
         status.output << "=#{app_update[:environment_id]}"
       end

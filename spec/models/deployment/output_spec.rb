@@ -5,8 +5,8 @@ describe Deployment::Output do
 
   it "creates a gist for storing output" do
     params = {
-      :files       => { :stdout => { :content => "Deployment 42 pending" } },
-      :public      => false,
+      :files => { :stdout => { :content => "Deployment 42 pending" } },
+      :public => false,
       :description => "Heaven number 42 for heaven"
     }
 
@@ -18,7 +18,7 @@ describe Deployment::Output do
     expect { output.create }.to_not raise_error
 
     params = {
-      :files  => {
+      :files => {
         :stderr => { :content => "chasing dreams" },
         :stdout => { :content => "push to limit" }
       },

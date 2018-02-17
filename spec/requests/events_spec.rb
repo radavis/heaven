@@ -1,6 +1,6 @@
 require "request_spec_helper"
 
-describe "Receiving GitHub hooks", :request do
+describe "Receiving GitHub hooks", :type => :request do
   include FixtureHelper
 
   before do
